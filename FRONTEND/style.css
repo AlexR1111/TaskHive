@@ -1,47 +1,19 @@
-@font-face {
-    font-family: "Honey";
-    src: url('HoneyBeezy-MVPew.ttf'); format('truetype');
-}
-body {
-    background-color: #FA812F;
-}
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(4, 120px);
-    grid-gap: 10px;
-    justify-content: center;
-}
-
-.hexagon {
-    width:120px;
-    height: 69.28px;
-    background-color: #FFB22C;
-    clip-path: polygon(50% 0%, 100% 25%,100% 75%, 50% 100%, 0% 75%, 0% 25%);
+.inputContainer {
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: bold;
-    color: #FEF3E2;
-    font-family: 'Honey', sans-serif;
+    align-items: center;
     text-align: center;
-    margin: 5px;
+    min-height: 100vh;
 }
 
-.hexagon:nth-child(odd) {
-    transform: translateX(60px);
-    margin-top: 34.64px;
+#taskInput {
+    border: 2px  solid red;
+    border-radius: 30%;
 }
 
-.hexagon:hover {
-    background-color: #F3C623;
-    transform: scale(1.1) translateX(60px) translateY(34.64px);
-    transition: 0.3s ease-in-out;
-    box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
-}
 
-.completed {
-    background-color: #FEF3E2;
-    color: white;
-    transition: 0.3s;
+li {
+    list-style-type: none;
+    ;
 }

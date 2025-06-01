@@ -1,28 +1,21 @@
-document.querySelectorAll(".hexagon").forEach(hex => {
-    hex.addEventListener("click", () => {
-        hex.computedStyleMap.backgroundColor = "#F3C623";
-    });
-});
+const taskInput = document.getElementById('taskInput');
+const taskList = document.getElementById('taskList');
+const addTaskButton = document.getElementById('addTaskButton');
 
-document.querySelectorAll(".hexagon").forEach(hex => {
-    hex.addEventListener("click", () => {
-        hex.classList.toggle("Completed");
-    });
-});
 
-document.querySelectorAll(".hexagon").forEach(hex => {
-    hex.addEventListener("click", () => {
-        hex.classList.toggle("InProgress");
-        localStorage.setItem(hex.textContent, hex.classList.contains("completed"));
-    });
+addTaskButton.addEventListener('click', function() {
+    const taskText = taskInput.value.trim();
+    taskInput.value = '';
+    if (taskText) {
+        const listItem = document.createElement('li');
+        listItem.textContent = taskText;
 
-    if (localStorage.getItem(hex.textContent) === "true") {
-        hex.classList.add("completed");
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function(){
+            listItem.remove();
+        });
+        listItem.appendChild(deleteButton);
+        taskList.appendChild(listItem);
     }
-});
-
-// Aufgabe erstellen
-
-document.getElementById("createTask").addEventListener("click", () => {
-    const
 })
